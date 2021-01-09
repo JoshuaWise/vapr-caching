@@ -24,7 +24,7 @@ This plugin prevents caches from ever serving stale content (i.e., content whose
 
 ### caching.never()
 
-Disables all caching, including any caching done by ETags (e.g., [`vapr-conditionals`](https://github.com/JoshuaWise/vapr-conditionals)). This should only be used to satisfy strict security requirements, as it can result in unnecessary bandwidth usage. If you need your content to always be up-to-date, it's probably better to use [`caching.private()`](#caching-private) or [`caching.shared()`](#caching-shared) with a duration of `0`.
+Disables all caching, including any caching done by ETags (e.g., [`vapr-conditionals`](https://github.com/JoshuaWise/vapr-conditionals)). This should only be used to satisfy strict security requirements, as it can result in unnecessary bandwidth usage. If you need your content to always be up-to-date, it's probably better to use [`caching.private()`](#cachingprivate) or [`caching.shared()`](#cachingshared) with a duration of `0`.
 
 ```js
 route.use(caching.never());
