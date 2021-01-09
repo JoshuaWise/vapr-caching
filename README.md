@@ -20,6 +20,8 @@ route.use(caching.never());
 route.use((req) => { ... });
 ```
 
+There are three different configurations to choose from, list below.
+
 ### caching.never()
 
 Disables all caching, including any caching done by ETags (e.g., [`vapr-conditionals`](https://github.com/JoshuaWise/vapr-conditionals)). This should only be used to satisfy strict security requirements, as it can result in unnecessary bandwidth usage. If you need your content to always be up-to-date, it's probably better to use [`.private()`](#cachingprivateoptions) or [`.shared()`](#cachingsharedoptions) with a duration of `0`.
