@@ -9,7 +9,7 @@ npm install --save vapr-caching
 
 ## Usage
 
-This plugin provides some convenience functions for setting HTTP caching headers (Cache-Control). Although setting headers is a simple task, it's common for people to use headers incorrectly, which can be avoided by using this plugin.
+This plugin provides some convenience functions for setting HTTP caching headers (Cache-Control). Although setting headers is a simple task, it's common for people to use caching headers incorrectly, which can be avoided by using this plugin.
 
 ```js
 const caching = require('vapr-caching');
