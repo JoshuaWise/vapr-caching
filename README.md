@@ -32,7 +32,7 @@ route.use(caching.never());
 
 ### caching.private([*options*])
 
-Disables shared caches (e.g., [CDNs](https://en.wikipedia.org/wiki/Content_delivery_network)) but enables private caches (e.g., browsers). This configuration should always be used when the content being served varies depending on which user requested it. The `duration` option determines how many seconds the content should be cached for.
+Disables shared caches (e.g., [CDNs](https://en.wikipedia.org/wiki/Content_delivery_network)) but enables private caches (e.g., browsers). This configuration should be used when the content being served varies depending on which user requested it. The `duration` option determines how many seconds the content should be cached for.
 
 ```js
 route.use(caching.private({ duration: 60 }));
@@ -42,7 +42,7 @@ If you need your content to always be up-to-date, use a duration of `0`.
 
 ### caching.shared([*options*])
 
-Enables both shared caches (e.g., [CDNs](https://en.wikipedia.org/wiki/Content_delivery_network)) and private caches (e.g., browsers). This configuration should only be used when the content being served does *not* vary depending on which user requested it. The `duration` option determines how many seconds the content should be cached for.
+Enables both shared caches (e.g., [CDNs](https://en.wikipedia.org/wiki/Content_delivery_network)) and private caches (e.g., browsers). This configuration should be used when the content being served does *not* vary depending on which user requested it. The `duration` option determines how many seconds the content should be cached for.
 
 ```js
 route.use(caching.shared({ duration: 60 }));
