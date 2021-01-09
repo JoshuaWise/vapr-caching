@@ -20,8 +20,6 @@ route.use(caching.never());
 route.use((req) => { ... });
 ```
 
-This plugin prevents caches from ever serving stale content (i.e., content whose cache duration has expired), which some caches might try to do in some circumstances. Due to the lack of standards in regards to serving stale content, cache implementations vary wildly in their behavior here. Therefore, in the interest of your application having deterministic behavior, we take the opinionated approach of preventing stale content from ever being served. If you have total control of the caches you're using and you need more customized behavior, you should set the Cache-Control header yourself instead of using this plugin.
-
 ### caching.never()
 
 Disables all caching, including any caching done by ETags (e.g., [`vapr-conditionals`](https://github.com/JoshuaWise/vapr-conditionals)). This should only be used to satisfy strict security requirements, as it can result in unnecessary bandwidth usage. If you need your content to always be up-to-date, it's probably better to use [`.private()`](#cachingprivateoptions) or [`.shared()`](#cachingsharedoptions) with a duration of `0`.
@@ -58,3 +56,7 @@ route.use(caching.shared({
   sharedDuration: 60,
 }));
 ```
+
+## Remarks
+
+This plugin prevents caches from ever serving stale content (i.e., content whose cache duration has expired), which some caches might try to do in some circumstances. Due to the lack of standards in regards to serving stale content, cache implementations vary wildly in their behavior here. Therefore, in the interest of your application having deterministic behavior, we take the opinionated approach of preventing stale content from ever being served. If you have total control of the caches you're using and you need more customized behavior, you should set the Cache-Control header yourself instead of using this plugin.
