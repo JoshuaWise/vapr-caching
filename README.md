@@ -24,7 +24,7 @@ There are three different configurations to choose from, list below.
 
 ### caching.never()
 
-Disables all caching, including any caching done by ETags (e.g., [`vapr-conditionals`](https://github.com/JoshuaWise/vapr-conditionals)). This should only be used to satisfy strict security requirements, as it can result in unnecessary bandwidth usage. If you need your content to always be up-to-date, it's probably better to use [`.private()`](#cachingprivateoptions) or [`.shared()`](#cachingsharedoptions) with a duration of `0`.
+Disables all caching, including any caching done by ETags (e.g., [`vapr-conditionals`](https://github.com/JoshuaWise/vapr-conditionals)). This configuration should only be used to satisfy strict security requirements, as it can result in unnecessary bandwidth usage. If you need your content to always be up-to-date, it's probably better to use [`.private()`](#cachingprivateoptions) or [`.shared()`](#cachingsharedoptions) with a duration of `0`.
 
 ```js
 route.use(caching.never());
@@ -32,7 +32,7 @@ route.use(caching.never());
 
 ### caching.private([*options*])
 
-Disables shared caches (e.g., [CDNs](https://en.wikipedia.org/wiki/Content_delivery_network)) but enables private caches (e.g., browsers). This should always be used when the content being served varies depending on which user requested it. The `duration` option determines how many seconds content should be cached for.
+Disables shared caches (e.g., [CDNs](https://en.wikipedia.org/wiki/Content_delivery_network)) but enables private caches (e.g., browsers). This configuration should always be used when the content being served varies depending on which user requested it. The `duration` option determines how many seconds content should be cached for.
 
 ```js
 route.use(caching.private({ duration: 60 }));
@@ -42,7 +42,7 @@ If you need your content to always be up-to-date, use a duration of `0`.
 
 ### caching.shared([*options*])
 
-Enables both shared caches (e.g., [CDNs](https://en.wikipedia.org/wiki/Content_delivery_network)) and private caches (e.g., browsers). This should only be used when the content being served does *not* vary depending on which user requested it. The `duration` option determines how many seconds content should be cached for.
+Enables both shared caches (e.g., [CDNs](https://en.wikipedia.org/wiki/Content_delivery_network)) and private caches (e.g., browsers). This configuration should only be used when the content being served does *not* vary depending on which user requested it. The `duration` option determines how many seconds content should be cached for.
 
 ```js
 route.use(caching.shared({ duration: 60 }));
