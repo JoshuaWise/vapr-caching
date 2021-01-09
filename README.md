@@ -61,4 +61,10 @@ route.use(caching.shared({
 
 ## Remarks
 
+### Caching responses to POST requests
+
+By default, this plugin will not cache responses to POST requests. However, the [`.private()`](#cachingprivateoptions) and [`.shared()`](#cachingsharedoptions) configurations support the `allowUnsafe` option, which can be set to `true` to support caching POSTs.
+
+### Serving stale content
+
 This plugin prevents caches from ever serving stale content (i.e., content whose cache duration has expired), which some caches might try to do in some circumstances. Due to the lack of standards in regards to serving stale content, cache implementations vary wildly in their behavior here. Therefore, in the interest of your application having deterministic behavior, we take the opinionated approach of preventing stale content from ever being served. If you have total control of the caches you're using and you need more customized behavior, you should set the Cache-Control header yourself instead of using this plugin.
