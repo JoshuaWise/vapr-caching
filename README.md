@@ -63,7 +63,7 @@ route.use(caching.shared({
 
 The following options can be used with any configuration.
 
-### options.condition = *isCacheableStatusCode*
+### options.condition = *default*
 
 By default, this plugin will only affect responses whose status codes are defined as being "cacheable by default" by the [HTTP specification](https://tools.ietf.org/html/rfc7231#section-6.1), as well as `304`, in order to support ETags. Specifically, that's `200`, `203`, `204`, `206`, `300`, `301`, `304`, `404`, `405`, `410`, `414`, and `501`.
 
