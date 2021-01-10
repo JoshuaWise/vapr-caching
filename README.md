@@ -63,7 +63,7 @@ route.use(caching.shared({
 
 The following options can be used with any configuration.
 
-### options.condition = *default*
+### options.condition
 
 By default, this plugin will only affect responses whose status codes are defined as being "cacheable by default" by the [HTTP specification](https://tools.ietf.org/html/rfc7231#section-6.1), as well as `304`, in order to support ETags. Specifically, that's `200`, `203`, `204`, `206`, `300`, `301`, `304`, `404`, `405`, `410`, `414`, and `501`.
 
@@ -78,7 +78,7 @@ route.use(caching.shared({
 
 Keep in mind that if no caching headers are present on a response that is "cacheable by default", caches may choose to cache it for any arbitrary amount of time, or not at all.
 
-### options.allowUnsafe = *false*
+### options.allowUnsafe
 
 By default, this plugin will not cache responses to POST requests. However, you can set the `allowUnsafe` option to `true` to support caching POSTs.
 
