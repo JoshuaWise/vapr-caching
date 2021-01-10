@@ -20,7 +20,7 @@ route.use(caching.never());
 route.use((req) => { ... });
 ```
 
-There are three different configurations to choose from, list below.
+There are three different configurations to choose from, listed below.
 
 ### caching.never([*options*])
 
